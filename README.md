@@ -4,3 +4,4 @@ All Rust coding language projects. From extremely simple and introductory to on 
 Current Projects in this repository include:
 1) Hello World (main.rs)
 2) Username and Email Array (mainArray.rs & Cargo.toml)
+3) Basic Calculator (mainCalculator.rs)
