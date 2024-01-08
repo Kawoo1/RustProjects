@@ -25,19 +25,19 @@ fn main() {
         }
 
         println!("Enter your Age:");
-        let age = get_user_input();
+        let age = get_valid_input("Age", |s| s.chars().all(char::is_numeric));
 
         println!("Enter your Height:");
-        let height = get_user_input();
+        let height = get_valid_input("Height", |s| s.chars().all(char::is_numeric));
 
         println!("Enter your Weight:");
-        let weight = get_user_input();
+        let weight = get_valid_input("Weight", |s| s.chars().all(char::is_numeric));
 
         println!("Enter your Race:");
-        let race = get_user_input();
+        let race = get_valid_input("Race", |s| s.chars().all(char::is_alphabetic));
 
         println!("Enter your Hair color:");
-        let hair_color = get_user_input();
+        let hair_color = get_valid_input("Hair Color", |s| s.chars().all(char::is_alphabetic));
 
         user_table.insert("Name", name);
         user_table.insert("Age", age);
