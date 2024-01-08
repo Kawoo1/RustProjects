@@ -66,3 +66,23 @@ fn get_user_input() -> String {
     io::stdin().read_line(&mut input).expect("Failed to read line");
     input.trim().to_string()
 }
+
+// Character constraints 
+// | Adds constraints so only letters (chars) are allowed in the fields:
+// - Name
+// - Race
+// - Hair color
+// | Adds constraints so that only numbers (ints) are allowed to be entered in the fields:
+// - Age
+// - Height
+// - Weight
+fn get_valid_input(field_name: &str) -> String {
+    loop {
+        let input = get_user_input();
+        if input.chars().all(char::is_alphabetic) {
+            return input;
+        } else {
+            println!("Invalid input for {}. Please enter only letters.", field_name);
+        }
+    }
+}
