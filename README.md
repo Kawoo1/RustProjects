@@ -6,3 +6,4 @@ Current Projects in this repository include:
 2) Username and Email Array (mainArray.rs & Cargo.toml)
 3) Basic Calculator (mainCalculator.rs)
 4) User Profile Table (KnowMe.rs)
+5) Hello Kernal (helloKernal.rs)
