@@ -1,4 +1,4 @@
-use std::io;
+use std::io::{self, Write};
 
 // main is the entry point of every rust program, this main begins with creating an infinite loop that
 // holds the "calculator" and all the user options. This calculator can do the 4 basic mathematical operations.
