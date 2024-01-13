@@ -18,15 +18,15 @@ fn main() {
         let choice = get_user_input("Enter your choice: ");
 
         match choice.trim().parse::<u32>() {
-            Ok(1) => perform_operation("Addition", |a, b| a + b),
-            Ok(2) => perform_operation("Subtraction", |a, b| a - b),
-            Ok(3) => perform_operation("Multiplication", |a, b| a * b),
+            Ok(1) => perform_operation("Addition", |a, b| a.checked_add(b)),
+            Ok(2) => perform_operation("Subtraction", |a, b| a.checked_sub(b)),
+            Ok(3) => perform_operation("Multiplication", |a, b| a.checked_mul(b)),
             Ok(4) => perform_operation("Division", |a, b| {
                 if b == 0 {
                     println!("Cannot divide by zero");
-                    0
+                    None
                 } else {
-                    a / b
+                    a.checked_div(b)
                 }
             }),
             Ok(5) => {
@@ -38,17 +38,18 @@ fn main() {
     }
 }
 
-fn perform_operation(operation: &str, op: fn(i32, i32) -> i32) {
-    let num1 = get_user_input("Enter the first number: ").trim().parse::<i32>();
-    let num2 = get_user_input("Enter the second number: ").trim().parse::<i32>();
+fn perform_operation(operation: &str, op: fn(i64, i64) -> Option<i64>) {
+    let num1 = get_user_input("Enter the first number: ").trim().parse::<i64>();
+    let num2 = get_user_input("Enter the second number: ").trim().parse::<i64>();
 
     match (num1, num2) {
         (Ok(num1), Ok(num2)) => {
-            let result = op(num1, num2);
-            if result > 99999999 {
-                println!("Overflow error");
-            } else {
+            // Change made to use Option<i64> instead of i32 for result. Allowing for a larger scope.
+            if let Some(result) = op(num1, num2) {
                 println!("Result of {}: {} {} = {}", operation, num1, num2, result);
+            } else {
+                // New overflow error message
+                println!("Overflow error");
             }
         }
         _ => println!("Invalid input. Please enter valid numbers."),
