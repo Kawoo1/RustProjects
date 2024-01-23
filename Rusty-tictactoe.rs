@@ -99,7 +99,8 @@ impl Board {
     }
 }
 
-
+// The main function is the entry point of the Rust program, and it is where the program execution begins
+// This file is the centerpiece to the program.
 fn main() {
     let mut board = Board::new();
     let mut current_player = Player::X;
