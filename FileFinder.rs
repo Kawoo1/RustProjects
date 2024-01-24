@@ -14,7 +14,7 @@ use std::io::prelude::*;
 
 fn main() -> std::io::Result<()> {
     // Specify the file path
-    let file_path = "path/to/your/file.txt";
+    let file_path = "C:\Program Files (x86)";
 
     // Attempt to open the file
     let mut file = File::open(file_path)?;
