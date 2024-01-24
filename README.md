@@ -8,3 +8,4 @@ Current Projects in this repository include:
 4) User Profile Table (KnowMe.rs)
 5) Hello Kernal (helloKernal.rs)
 6) Lets Dance! (letsDance.rs)
+7) File Finder (FileFinder.rs)
