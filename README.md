@@ -9,3 +9,4 @@ Current Projects in this repository include:
 5) Hello Kernal (helloKernal.rs)
 6) Lets Dance! (letsDance.rs)
 7) File Finder (FileFinder.rs)
+8) ShortenMe! (MakeMeShort.rs)
